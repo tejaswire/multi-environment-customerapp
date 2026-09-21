@@ -1,0 +1,25 @@
+services:
+
+  customer-app:
+    build: .
+    container_name: customer-app
+    ports:
+      - "8080:3000"
+    environment:
+      NODE_ENV: DEV
+      DB_HOST: customer-db
+    networks:
+      - customer-net
+
+  customer-db:
+    image: mysql:8.0
+    container_name: customer-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: customerdb
+    networks:
+      - customer-net
+
+networks:
+  customer-net:
+    driver: bridge
