@@ -9,7 +9,7 @@ const DB_HOST = process.env.DB_HOST || "customer-db";
 const customers = [
     { id: 1, name: "Tejaswi" },
     { id: 2, name: "Rahul" },
-    { id: 3, name: "Anita" }
+    { id: 3, name:  "Anita" }
 ];
 
 app.get("/", (req, res) => {
