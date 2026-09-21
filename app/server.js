@@ -33,13 +33,14 @@ app.get("/customers/search", (req, res) => {
 
     const result = customers.filter(customer =>
         customer.name.toLowerCase().includes(name)
-        
+
     );
 
     res.json({
         environment: ENVIRONMENT,
         database: DB_HOST,
         customers: result
+        
     });
 });
 
